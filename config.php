@@ -47,44 +47,56 @@ class dbClass {
     //exist
 	$this->host = 'localhost';
 
-		$this->user = 'root';
+		// $this->user = 'root';
 
-		$this->pass = '';
+		// $this->pass = '';
 
-		$this->dbname = 'user';
+		// $this->dbname = 'user';
 
+		$servername = "localhost";
+		$username = "root";
+		$password = "talhaawan";
 
+		// Create connection
+		$conn = new mysqli($servername, $username, $password);
 
+		// Check connection
+		if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+		}
+		echo "Connected successfully";
+		
 
-		try {
+		// try {
 
 			
 
-			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.'', $this->user, $this->pass);
+		// 	$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname.'', $this->user, $this->pass);
 
 			
 
-			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// 	$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		// 	var_dump($this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
+		
+
+		// } catch (PDOException $e) {
+
+		// 	echo "Error: " . $e->getMessage();
+
+		// }
 
 		
 
-		} catch (PDOException $e) {
+		// if(!$this->conn) {
 
-			echo "Error: " . $e->getMessage();
+		// 	$this->error = 'Fatal Error :'.$e->getMessage();
 
-		}
-
-		
-
-		if(!$this->conn) {
-
-			$this->error = 'Fatal Error :'.$e->getMessage();
-
-		}
+		// }
 
 		
 
-		return $this->conn;
+		// return $this->conn;
 
 	
 
